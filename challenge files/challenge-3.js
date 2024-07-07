@@ -25,9 +25,6 @@ function payeBracket(taxableIncome){
     }
 }
 
-let netSalary = taxableIncome - payeBracket(taxableIncome)
-
-
 // Function to calculate NHIF contribution
 function nhifBracket(grossSalary){
     if (grossSalary <= 5999){
@@ -83,6 +80,9 @@ function nssfDeduction(grossSalary){
 function housingLevy(grossSalary){
     return grossSalary * 0.015
 }
+
+// Calculate the net salary after deducting PAYE as the final item.
+let netSalary = taxableIncome - payeBracket(taxableIncome)
 
 // Create a reciept to log all outputs.
 console.log(`Gross Salary: ${grossSalary}`)
